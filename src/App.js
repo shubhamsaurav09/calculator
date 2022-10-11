@@ -83,6 +83,9 @@ function reducer(state, { type, payLoad }) {
         operation: null,
         currentOperand: evaluate(state),
       };
+
+    default:
+      return state;
   }
 }
 
@@ -103,6 +106,8 @@ function evaluate({ currentOperand, previousOperand, operation }) {
       break;
     case "÷":
       computation = prev / current;
+      break;
+    default:
       break;
   }
 

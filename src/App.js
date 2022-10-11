@@ -147,7 +147,7 @@ export default function App() {
       <button onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
         DEL
       </button>
-      <OperationButton operation="/" dispatch={dispatch}></OperationButton>
+      <OperationButton operation="÷" dispatch={dispatch}></OperationButton>
       <DigitButton digit="1" dispatch={dispatch}></DigitButton>
       <DigitButton digit="2" dispatch={dispatch}></DigitButton>
       <DigitButton digit="3" dispatch={dispatch}></DigitButton>

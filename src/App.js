@@ -13,6 +13,13 @@ export const ACTIONS = {
 function reducer(state, { type, payLoad }) {
   switch (type) {
     case ACTIONS.ADD_DIGIT:
+      if (state.overwrite) {
+        return {
+          ...state,
+          currentOperand: payLoad.digit,
+          overwrite: false,
+        };
+      }
       return {
         ...state,
         currentOperand: `${state.currentOperand || ""}${payLoad.digit}`,

@@ -138,43 +138,46 @@ export default function App() {
   );
 
   return (
-    <div className="container-grid">
-      <div className="output">
-        <div className="previous-operand">
-          {previousOperand} {operation}
+    <div>
+      <h1>Calculator</h1>
+      <div className="container-grid">
+        <div className="output">
+          <div className="previous-operand">
+            {previousOperand} {operation}
+          </div>
+          <div className="current-operand">{formatOperand(currentOperand)}</div>
         </div>
-        <div className="current-operand">{formatOperand(currentOperand)}</div>
+        <button
+          className="span-two"
+          onClick={() => dispatch({ type: ACTIONS.CLEAR })}
+        >
+          AC
+        </button>
+        <button onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
+          DEL
+        </button>
+        <OperationButton operation="÷" dispatch={dispatch}></OperationButton>
+        <DigitButton digit="1" dispatch={dispatch}></DigitButton>
+        <DigitButton digit="2" dispatch={dispatch}></DigitButton>
+        <DigitButton digit="3" dispatch={dispatch}></DigitButton>
+        <OperationButton operation="*" dispatch={dispatch}></OperationButton>
+        <DigitButton digit="4" dispatch={dispatch}></DigitButton>
+        <DigitButton digit="5" dispatch={dispatch}></DigitButton>
+        <DigitButton digit="6" dispatch={dispatch}></DigitButton>
+        <OperationButton operation="+" dispatch={dispatch}></OperationButton>
+        <DigitButton digit="7" dispatch={dispatch}></DigitButton>
+        <DigitButton digit="8" dispatch={dispatch}></DigitButton>
+        <DigitButton digit="9" dispatch={dispatch}></DigitButton>
+        <OperationButton operation="-" dispatch={dispatch}></OperationButton>
+        <DigitButton digit="." dispatch={dispatch}></DigitButton>
+        <DigitButton digit="0" dispatch={dispatch}></DigitButton>
+        <button
+          className="span-two"
+          onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
+        >
+          =
+        </button>
       </div>
-      <button
-        className="span-two"
-        onClick={() => dispatch({ type: ACTIONS.CLEAR })}
-      >
-        AC
-      </button>
-      <button onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
-        DEL
-      </button>
-      <OperationButton operation="÷" dispatch={dispatch}></OperationButton>
-      <DigitButton digit="1" dispatch={dispatch}></DigitButton>
-      <DigitButton digit="2" dispatch={dispatch}></DigitButton>
-      <DigitButton digit="3" dispatch={dispatch}></DigitButton>
-      <OperationButton operation="*" dispatch={dispatch}></OperationButton>
-      <DigitButton digit="4" dispatch={dispatch}></DigitButton>
-      <DigitButton digit="5" dispatch={dispatch}></DigitButton>
-      <DigitButton digit="6" dispatch={dispatch}></DigitButton>
-      <OperationButton operation="+" dispatch={dispatch}></OperationButton>
-      <DigitButton digit="7" dispatch={dispatch}></DigitButton>
-      <DigitButton digit="8" dispatch={dispatch}></DigitButton>
-      <DigitButton digit="9" dispatch={dispatch}></DigitButton>
-      <OperationButton operation="-" dispatch={dispatch}></OperationButton>
-      <DigitButton digit="." dispatch={dispatch}></DigitButton>
-      <DigitButton digit="0" dispatch={dispatch}></DigitButton>
-      <button
-        className="span-two"
-        onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
-      >
-        =
-      </button>
     </div>
   );
 }

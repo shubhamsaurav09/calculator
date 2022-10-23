@@ -61,3 +61,31 @@ h1 {
   color: white;
   font-size: 2.5rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .container-grid {
+    width: 75%;
+    margin: 5rem auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-grid {
+    width: 85%;
+    margin: 5rem auto 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container-grid {
+    width: 90%;
+    margin: 5rem auto 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container-grid {
+    width: 95%;
+    margin: 2rem auto 0;
+  }
+}
